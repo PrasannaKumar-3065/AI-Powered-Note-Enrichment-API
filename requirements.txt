@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+pydantic
+python-dotenv
+httpx
+pytest
+pytest-asyncio
+openai
+google-genai
