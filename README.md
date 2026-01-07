@@ -139,6 +139,7 @@ CREATE TABLE notes (
 ### Read & Delete Operations
 
 - **GET /notes/{id}**: Retrieve single note (404 if not found)
+- **GET /notes/**: Retrieve all notes
 - **DELETE /notes/{id}**: Remove note (204 No Content)
 
 ---
@@ -175,7 +176,7 @@ CREATE TABLE notes (
    
    Create a `.env` file in the project root:
    ```env
-   DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/notes_db
+   DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/db_name
    OPENAI_API_KEY=your_openai_api_key_here
    GEMINI_API_KEY=your_gemini_api_key_here
    MAX_TOKENS=1000
@@ -200,22 +201,22 @@ The API will be available at `http://localhost:8000`
 
 ## 📚 API Documentation
 
-### Interactive Documentation
-
 Once running, access:
 - **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
 - **OpenAPI JSON**: http://localhost:8000/openapi.json
 
 ### API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/notes` | Create a new note with AI summary |
-| GET | `/notes` | List all notes |
-| GET | `/notes/{id}` | Get a specific note by ID |
-| PUT | `/notes/{id}` | Update a note (regenerates summary) |
-| DELETE | `/notes/{id}` | Delete a note |
+## Notes API Endpoints
++--------+---------------------+---------------------------------------------+
+| Method     | Endpoint        | Description                                 |
+|------------|-----------------|---------------------------------------------|
+| **POST**   | `/notes`        | Create a new note with AI-generated summary |
+| **GET**    | `/notes`        | Retrieve a list of all notes                |
+| **GET**    | `/notes/{id}`   | Retrieve a specific note by its ID          |
+| **PUT**    | `/notes/{id}`   | Update a note and regenerate its summary    |
+| **DELETE** | `/notes/{id}`   | Delete a note by its ID                     |
+|----------------------------------------------------------------------------|
 
 ### Example Requests
 
@@ -282,17 +283,7 @@ pytest app/tests/test_notes.py -v
 
 - **Integration Tests**: End-to-end API testing using HTTPX AsyncClient
 - **Mocked External APIs**: AI services are mocked to avoid real API calls
-- **Test Coverage**: CRUD operations, validation, error cases
 - **CI-Ready**: No external dependencies in test suite
-
-**Test Scenarios:**
-- ✅ Create note with valid data
-- ✅ Retrieve existing note
-- ✅ Handle 404 for non-existent notes
-- ✅ Update note content and summary
-- ✅ Delete note successfully
-- ✅ Validate request payload constraints
-
 ---
 
 ## 🛡️ Error Handling & Resilience
