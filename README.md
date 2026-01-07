@@ -139,7 +139,6 @@ CREATE TABLE notes (
 ### Read & Delete Operations
 
 - **GET /notes/{id}**: Retrieve single note (404 if not found)
-- **GET /notes**: List all notes
 - **DELETE /notes/{id}**: Remove note (204 No Content)
 
 ---
