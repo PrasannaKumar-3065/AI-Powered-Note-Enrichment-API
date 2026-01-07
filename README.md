@@ -98,7 +98,7 @@ CREATE TABLE notes (
     content         TEXT NOT NULL,
     ai_summary      TEXT,
     created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+    updated_at      TIMESTAMP
 );
 ```
 
