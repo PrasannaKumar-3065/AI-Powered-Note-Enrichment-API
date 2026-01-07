@@ -12,6 +12,10 @@ async def create_notes(database:AsyncSession, note_data:Note):
     await database.refresh(note_data)
     return note_data
 
+async def get_all_notes(database:AsyncSession):
+    result = await database.execute(select(Note))
+    return result.scalars().all()
+
 async def get_notes(database:AsyncSession, id):
     result = await database.execute(select(Note).where(Note.id == id))
     note_data = result.scalar_one_or_none()

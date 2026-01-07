@@ -20,6 +20,10 @@ def get_note_service(http_client: httpx.AsyncClient = Depends(get_http_client)):
 async def get_summary_service(http_client: httpx.AsyncClient = Depends(get_http_client)) -> SummaryService:
     return SummaryService(http_client)
 
+@router.get("", response_model=list[GetNotes])
+async def get_all(database: AsyncSession = Depends(get_database_session)):
+    return await note_repo.get_all_notes(database)
+
 @router.post("", response_model=GetNotes, status_code=status.HTTP_201_CREATED)
 async def create(
     note_data: CreateNotes, 
