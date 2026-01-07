@@ -4,7 +4,7 @@ from app.core.database import Base, engine
 from fastapi.responses import JSONResponse
 import httpx
 
-from core.exceptions import GlobalExceptionHandler
+from app.core.exceptions import GlobalExceptionHandler
 
 app = FastAPI(title="Notes API")
 

@@ -9,7 +9,7 @@ import httpx
 router = APIRouter(prefix="/notes", tags=["Notes"])
 
 async def get_http_client() -> httpx.AsyncClient:
-    from main import app
+    from app.main import app
     if not hasattr(app.state, 'http_client'):
         app.state.http_client = httpx.AsyncClient()
     return app.state.http_client

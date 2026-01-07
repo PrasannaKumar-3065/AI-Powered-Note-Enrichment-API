@@ -2,8 +2,8 @@ import httpx
 from app.core.config import settings
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models.note import Note
-from schemas.note import CreateNotes
+from app.models.note import Note
+from app.schemas.note import CreateNotes
 import logging
 from openai import AsyncOpenAI
 from google import genai
