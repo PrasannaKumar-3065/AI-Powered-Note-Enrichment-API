@@ -307,7 +307,6 @@ Default Message (Safe Fallback)
 
 **Implemented Safeguards:**
 - Token limit enforcement
-- Timeout handling
 - Logged failures for debugging
 - User-friendly error messages
 - No unhandled exceptions exposed to clients
