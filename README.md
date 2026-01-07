@@ -150,8 +150,8 @@ CREATE TABLE notes (
 
 - Python 3.9+
 - PostgreSQL 13+
-- OpenAI API Key (optional)
-- Google Gemini API Key (optional)
+- OpenAI API Key
+- Google Gemini API Key
 
 ### Installation
 
