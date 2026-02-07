@@ -1,4 +1,4 @@
-# 📝 Notes API - Python Backend Engineer Assessment
+# 📝 AI Powered Notes Enrichment API
 
 A production-ready, async REST API built with **FastAPI** and **PostgreSQL** that demonstrates clean architecture, external API integration, and robust error handling through an AI-powered notes management system.
 
